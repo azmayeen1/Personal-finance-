@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <Style>body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+    
+    header {
+        background-color: #4CAF50;
+        color: white;
+        padding: 1rem 0;
+        text-align: center;
+    }
+    
+    header h1 {
+        margin: 0;
+    }
+    
+    nav ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    
+    nav ul li {
+        display: inline;
+        margin: 0 1rem;
+    }
+    
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+    }
+    
+    section {
+        padding: 2rem;
+        margin: 1rem auto;
+        max-width: 800px;
+        background-color: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    section h2 {
+        border-bottom: 2px solid #4CAF50;
+        padding-bottom: 0.5rem;
+    }
+    
+    .article {
+        margin-top: 1rem;
+    }
+    
+    footer {
+        text-align: center;
+        padding: 1rem 0;
+        background-color: #4CAF50;
+        color: white;
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+    }
+    
+    #budget-form {
+        margin-top: 1rem;
+    }
+    
+    #budget-form form {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    #budget-form label {
+        margin-top: 0.5rem;
+    }
+    
+    #budget-form input {
+        padding: 0.5rem;
+        margin-top: 0.25rem;
+    }
+    
+    #budget-form button {
+        margin-top: 1rem;
+        padding: 0.5rem;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+    
+    #budget-result {
+        margin-top: 1rem;
+    }
+    </Style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Finance</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Personal Finance</h1>
+        <nav>
+            <ul>
+                <li><a href="#budgeting">Budgeting Tools</a></li>
+                <li><a href="#investment">Investment Education</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="budgeting">
+        <h2>Budgeting Tools</h2>
+        <div id="budget-form">
+            <form id="budgetCalculator">
+                <label for="income">Monthly Income:</label>
+                <input type="number" id="income" name="income">
+                
+                <label for="expenses">Monthly Expenses:</label>
+                <input type="number" id="expenses" name="expenses">
+                
+                <button type="button" onclick="calculateBudget()">Calculate</button>
+            </form>
+            <div id="budget-result"></div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+
+    <script>
+        function calculateBudget() {
+            const income = document.getElementById("income").value;
+            const expenses = document.getElementById("expenses").value;
+            const result = document.getElementById("budget-result");
+            const budget = income - expenses;
+            result.textContent = `Your monthly budget is: $${budget.toFixed(2)}`;
+        }    
+    </script>
+
+    <section id="investment">
+        <h2>Investment Education</h2>
+        <div class="article">
+            <h3>Introduction to Investing</h3>
+            <p>Investing is the act of allocating resources, usually money, with the expectation of generating an income or profit. You can invest in endeavors such as using money to start a business, or in assets such as purchasing real estate in hopes of reselling it later at a higher price.</p>
+        </div>
+        <div class="article">
+            <h3>Stock Market Basics</h3>
+            <p>The stock market refers to the collection of markets and exchanges where regular activities of buying, selling, and issuance of shares of publicly-held companies take place. Such financial activities are conducted through institutionalized formal exchanges or over-the-counter (OTC) marketplaces.</p>
+        </div>
+        <div class="article">
+            <h3>Retirement Planning</h3>
+            <p>Retirement planning involves determining retirement income goals and the actions and decisions necessary to achieve those goals. Retirement planning includes identifying sources of income, estimating expenses, implementing a savings program, and managing assets and risk.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Personal Finance. All rights reserved.</p>
+        <p>Designed by <a href="https://github.com/azmayeen1">GM Azmayeen Ahnaf</a></p>
+        <p><a href="https://azmayeen1.github.io/Personal-finance-/">Our policy and terms of use</a></p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
